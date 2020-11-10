@@ -1,0 +1,40 @@
+body{
+	padding: 0;
+	margin: 0;
+	background-color: black;
+}
+div.header{
+	width: calc(100% - 6rem);
+	height: 6rem;
+	background-color: rgb(38, 38, 38);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 3rem;
+}
+div.logo{
+	width: 5rem;
+	height: 5rem;
+	background: rgb(0, 0, 0);
+	border-radius: 100%;
+	position: relative;
+	z-index: 10;
+}
+div.logo::after{
+	content: url();
+	position: absolute;
+	width: 90%;
+	height: 90%;
+	top: -1%;
+	left: 2%;
+	display: block;
+	background-color: rgb(255, 255, 255);
+	z-index: -1;
+	border-radius: 100%;
+	background-image: url(https://instagram.fppk1-1.fna.fbcdn.net/v/t51.2885-15/e35/115729328_892234564600789_5276454620485538371_n.jpg?_nc_ht=instagram.fppk1-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=qVlnwzO7C4AAX9FU-Ns&tp=18&oh=895697bb8f0b1aa2ded5bfb8da2d8cd2&oe=5FD504C6);
+	background-size: contain;
+}
+div.time{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-large;
+}
