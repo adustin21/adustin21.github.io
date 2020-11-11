@@ -45,6 +45,14 @@ div.section{
 	margin: 2rem 0;
 	border-bottom: 2px solid rgb(38, 38, 38);
 }
+div.aWrapper{
+	display: grid;
+	width: 100%;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1rem;
+	padding: 1rem 0;
+}
 a.sectionhref{
 	width: 100%;
 	height: 15vh;
@@ -61,14 +69,6 @@ a.sectionhref{
 a.sectionhref:hover{
 	font-size: 110%;
 	color: white;
-}
-div.aWrapper{
-	display: grid;
-	width: 100%;
-	grid-template-rows: 1fr 1fr;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-gap: 1rem;
-	padding: 1rem 0;
 }
 textarea#draft{
 	outline: none;

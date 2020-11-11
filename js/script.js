@@ -3,17 +3,17 @@ const el__logo = document.getElementById("logo_in");
 const el__section_s = document.getElementsByClassName("section");
 let setLogoCoordinates = (sec) => {
 	if (sec <= 15){
-		el__logo.style.left = 5 + (sec * 1.2) + "%";
-		el__logo.style.top = (sec * 1.2) + "%";
+		el__logo.style.left = 5 + (sec * 0.33) + "%";
+		el__logo.style.top = (sec * 0.33) + "%";
 	}else if (sec <= 30){
-		el__logo.style.left = ((10 + (5 - (sec * 1.2)))) + "%";
-		el__logo.style.top = (sec * 1.2) + "%";
+		el__logo.style.left = ((10 + (5 - (sec * 0.33)))) + "%";
+		el__logo.style.top = (sec * 0.33) + "%";
 	}else if (sec <= 45){
-		el__logo.style.left = ((10 + (5 - (sec * 1.2)))) + "%";
-		el__logo.style.top = (10 - (-1 *(10 - sec * 1.2))) + "%";
+		el__logo.style.left = ((10 + (5 - (sec * 0.33)))) + "%";
+		el__logo.style.top = (10 - (-1 *(10 - sec * 0.33))) + "%";
 	}else if (sec <= 60){
-		el__logo.style.left = (-1 * (15 - (sec * 1.2))) + "%";
-		el__logo.style.top = (10 - (-1 *(10 - sec * 1.2))) + "%";
+		el__logo.style.left = (-1 * (15 - (sec * 0.33))) + "%";
+		el__logo.style.top = (10 - (-1 *(10 - sec * 0.33))) + "%";
 	}
 }
 let getTime = () => {
@@ -23,7 +23,7 @@ let getTime = () => {
 	let sec = nowTime.getSeconds();
 	sec = sec > 9 ? sec : "0" + sec;
 	min = min > 9 ? min : "0" + min;
-	setLogoCoordinates(hour);
+	setLogoCoordinates(min);
 	return `${hour}:${min}:${sec}`;
 }
 let updateTime = setInterval(() => {
