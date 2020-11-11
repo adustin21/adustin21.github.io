@@ -9,10 +9,29 @@
 <body>
 	<div class="root" id="root">
 		<div class="header" id="header">
-			<div class="logo" id="logo"></div>
+			<div class="logo">
+				<div id="logo_in"></div>
+			</div>
 			<div class="time" id="time"></div>
 		</div>
 		<div class="helloScreen" id="helloScreen"></div>
+
+		<div class="section" header="ССЫЛКИ">
+			<div class="aWrapper">
+				<a target="_blank" href="https://translate.yandex.ru/" class="sectionhref">ПЕРЕВОД</a>
+				<a target="_blank" href="https://profile.intra.42.fr/" class="sectionhref">ИНТРА</a>
+				<a target="_blank" href="https://projects.intra.42.fr/" class="sectionhref">ИНТРА<br>проекты</a>
+				<a target="_blank" href="https://music.yandex.ru/home" class="sectionhref">МУЗЫКА</a>
+				<a target="_blank" href="https://keep.google.com/#label/today" class="sectionhref">GOOGLE<br>keep</a>
+				<a target="_blank" href="https://moulinette.kzn.21-school.ru/" class="sectionhref">ТРЕЙСЫ</a>
+			</div>
+		</div>
+		<div class="section" header="ЧЕРНОВИКИ">
+			<p class="copy">gcc -Wall -Wextra -Werror</p>
+		</div>
+		<div class="section" header="ЗАМЕТКИ">
+			<textarea name="draft" placeholder="данные не хранятся после перезагрузки" id="draft" cols="30" rows="15"></textarea>
+		</div>
 	</div>
 	<script src="./js/script.js"></script>
 </body>
