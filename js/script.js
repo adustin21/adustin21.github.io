@@ -1,3 +1,4 @@
+const el_body = document.getElementsByTagName("body")[0];
 const el__time = document.getElementById("time");
 const el__logo = document.getElementById("logo_in");
 const el__section_s = document.getElementsByClassName("section");
@@ -5,7 +6,9 @@ const el__drafts= document.getElementById("drafts");
 const el__links= document.getElementsByClassName("aWrapper")[0];
 const colors = {
 	dark: "rgb(0, 0, 0)",
-	lightdark: "rgb(38, 38, 38)"
+	lightdark: "rgb(38, 38, 38)",
+	lightgreen: "rgb(38, 72, 38)",
+	lightred: "rgb(72, 32, 38)"
 }
 let setLogoCoordinates = (sec) => {
 	if (sec <= 15){
@@ -52,6 +55,20 @@ let updateLinks = () => {
 		el__links.appendChild(el__link);
 	}
 }
+let pageAlert = (message, color = colors.lightgreen) => {
+	let el_pageAlert = document.createElement("div");
+	el_pageAlert.innerText = message;
+	el_pageAlert.style.padding = "1rem 2rem";
+	el_pageAlert.style.backgroundColor = color;
+	el_pageAlert.style.position = "fixed";
+	el_pageAlert.style.bottom = "1rem";
+	el_pageAlert.style.right = "1rem";
+	el_body.appendChild(el_pageAlert);
+	setTimeout(() => {
+		el_body.removeChild(el_pageAlert)
+	}, 3000);
+
+}
 let updateDrafts = () => {
 	for (let i = 0; i < STORE.drafts.length; i++) {
 		const element = STORE.drafts[i];
@@ -60,6 +77,23 @@ let updateDrafts = () => {
 		el__draft_content.style.backgroundColor = colors.lightdark;
 		el__draft_content.style.padding = "1rem";
 		el__draft_content.style.whiteSpace = "pre-wrap";
+		el__draft_content.style.cursor = "pointer";
+		el__draft_content.style.userSelect = "none";
+		el__draft_content.style.transitionDuration = "0.5s";
+		el__draft_content.addEventListener("click", () => {
+			navigator.clipboard.writeText(element)
+			.then(() => {
+				el__draft_content.style.backgroundColor = colors.lightgreen;
+				pageAlert("СКОПИРОВАНО");
+				setTimeout(() => {
+					el__draft_content.style.backgroundColor = colors.lightdark;
+				}, 1500);
+			})
+			.catch(err => {
+				console.log(err);
+				pageAlert("ОШИБКА КОПИРОВАНИЯ", colors.lightred);
+			});
+		});
 		el__drafts.appendChild(el__draft_content);
 	}
 }
