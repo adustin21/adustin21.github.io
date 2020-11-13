@@ -4,6 +4,7 @@ const el__logo = document.getElementById("logo_in");
 const el__section_s = document.getElementsByClassName("section");
 const el__drafts= document.getElementById("drafts");
 const el__links= document.getElementsByClassName("aWrapper")[0];
+const el_note = document.getElementById("note");
 const colors = {
 	dark: "rgb(0, 0, 0)",
 	lightdark: "rgb(38, 38, 38)",
@@ -34,6 +35,21 @@ let getTime = () => {
 	min = min > 9 ? min : "0" + min;
 	setLogoCoordinates(min);
 	return `${hour}:${min}:${sec}`;
+}
+let copyFromElement = (element) => {
+	text = element.innerText == "" ? element.value : element.innerText;
+	navigator.clipboard.writeText(text)
+	.then(() => {
+		element.style.backgroundColor = colors.lightgreen;
+		pageAlert("СКОПИРОВАНО");
+		setTimeout(() => {
+			element.style.backgroundColor = colors.lightdark;
+		}, 1500);
+	})
+	.catch(err => {
+		console.log(err);
+		pageAlert("ОШИБКА КОПИРОВАНИЯ", colors.lightred);
+	});
 }
 let updateLinks = () => {
 	for (let i = 0; i < STORE.links.length; i++) {
@@ -81,18 +97,7 @@ let updateDrafts = () => {
 		el__draft_content.style.userSelect = "none";
 		el__draft_content.style.transitionDuration = "0.5s";
 		el__draft_content.addEventListener("click", () => {
-			navigator.clipboard.writeText(element)
-			.then(() => {
-				el__draft_content.style.backgroundColor = colors.lightgreen;
-				pageAlert("СКОПИРОВАНО");
-				setTimeout(() => {
-					el__draft_content.style.backgroundColor = colors.lightdark;
-				}, 1500);
-			})
-			.catch(err => {
-				console.log(err);
-				pageAlert("ОШИБКА КОПИРОВАНИЯ", colors.lightred);
-			});
+			copyFromElement(el__draft_content)
 		});
 		el__drafts.appendChild(el__draft_content);
 	}
@@ -116,6 +121,9 @@ let updateSectionContent = () => {
 	updateLinks();
 	updateDrafts();
 	updatePageSettings();
+	el_note.addEventListener("dblclick", () => {
+		copyFromElement(el_note);
+	})
 }
 
 
