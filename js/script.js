@@ -1,6 +1,12 @@
 const el__time = document.getElementById("time");
 const el__logo = document.getElementById("logo_in");
 const el__section_s = document.getElementsByClassName("section");
+const el__drafts= document.getElementById("drafts");
+const el__links= document.getElementsByClassName("aWrapper")[0];
+const colors = {
+	dark: "rgb(0, 0, 0)",
+	lightdark: "rgb(38, 38, 38)"
+}
 let setLogoCoordinates = (sec) => {
 	if (sec <= 15){
 		el__logo.style.left = 5 + (sec * 0.33) + "%";
@@ -26,9 +32,40 @@ let getTime = () => {
 	setLogoCoordinates(min);
 	return `${hour}:${min}:${sec}`;
 }
-let updateTime = setInterval(() => {
-	el__time.innerText = getTime();
-}, 500);
+let updateLinks = () => {
+	for (let i = 0; i < STORE.links.length; i++) {
+		const element = STORE.links[i];
+		let el__link = document.createElement("a");
+		el__link.setAttribute("href", element.link);
+		el__link.setAttribute("target", "_blank");
+		el__link.className = "sectionhref";
+		el__link.innerText = element.name;
+		if (element.subtitle != undefined){
+			el__link.innerHTML = element.name + "<br>" + element.subtitle;
+		}
+		if (STORE.links.length % 4 == 0)
+		{
+			el__links.style.gridTemplateColumns = "repeat(4, 1fr)";
+		}else {
+			el__links.style.gridTemplateColumns = "repeat(3, 1fr)";
+		}
+		el__links.appendChild(el__link);
+	}
+}
+let updateDrafts = () => {
+	for (let i = 0; i < STORE.drafts.length; i++) {
+		const element = STORE.drafts[i];
+		let el__draft_content = document.createElement("p");
+		el__draft_content.innerText = element;
+		el__draft_content.style.backgroundColor = colors.lightdark;
+		el__draft_content.style.padding = "1rem";
+		el__draft_content.style.whiteSpace = "pre-wrap";
+		el__drafts.appendChild(el__draft_content);
+	}
+}
+let updatePageSettings = () => {
+	el__logo.style.backgroundImage = `url(${STORE.pageSettings.logo})`;
+}
 let updateSectionHeaders = () => {
 	for (let i = 0; i < el__section_s.length; i++) {
 		const element = el__section_s[i];
@@ -41,4 +78,15 @@ let updateSectionHeaders = () => {
 		element.prepend(el__sectionHeader);
 	}
 }
+let updateSectionContent = () => {
+	updateLinks();
+	updateDrafts();
+	updatePageSettings();
+}
+
+
+let updateTime = setInterval(() => {
+	el__time.innerText = getTime();
+}, 500);
 updateSectionHeaders();
+updateSectionContent();

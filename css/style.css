@@ -22,7 +22,6 @@ div.logo{
 	border-radius: 100%;
 }
 div#logo_in{
-	content: url();
 	position: absolute;
 	top: 0;
 	left: 5%;
@@ -31,7 +30,6 @@ div#logo_in{
 	display: block;
 	background-color: rgb(0, 0, 0);
 	border-radius: 100%;
-	background-image: url(https://instagram.fppk1-1.fna.fbcdn.net/v/t51.2885-15/e35/115729328_892234564600789_5276454620485538371_n.jpg?_nc_ht=instagram.fppk1-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=qVlnwzO7C4AAX9FU-Ns&tp=18&oh=895697bb8f0b1aa2ded5bfb8da2d8cd2&oe=5FD504C6);
 	background-size: contain;
 	transition-duration: 1s;
 }
@@ -48,8 +46,6 @@ div.section{
 div.aWrapper{
 	display: grid;
 	width: 100%;
-	grid-template-rows: 1fr 1fr;
-	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 1rem;
 	padding: 1rem 0;
 }
@@ -70,7 +66,7 @@ a.sectionhref:hover{
 	font-size: 110%;
 	color: white;
 }
-textarea#draft{
+textarea#note{
 	outline: none;
 	border: none;
 	color: rgb(44, 89, 0);
