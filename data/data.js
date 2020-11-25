@@ -32,9 +32,9 @@ const STORE = {
 			color: "default"
 		},
 		{
-			name: "GOOGLE",
-			subtitle: "keep",
-			link: "https://keep.google.com/#label/today",
+			name: "GITHUB",
+			subtitle: "adustin21",
+			link: "https://github.com/adustin21/",
 			color: "default"
 		},
 	],
