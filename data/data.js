@@ -51,5 +51,6 @@ int main(void)
 	return (0);
 }`,
 		`-2147483648`,
+		`write(1, "OMG, Danila\n", 12);`,
 	]
 }
