@@ -18,8 +18,8 @@
 
 
         {
-            name: "Имя сайта",
-            subtitle: "подзаголовок",
+            name: "GitHub",
+            subtitle: "adustin21",
             link: "https://url.com",
             color: "default"
         },
