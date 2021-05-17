@@ -2,7 +2,7 @@ const STORE = {
 	pageSettings: {
 		name: "adustin",
 		colorscheme: "dark",
-		logo: "https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/110214189_604977687115950_6038916004280938289_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=106&_nc_ohc=uGWhQvxQipEAX9LlGja&tp=1&oh=db0773b3802835f5c9c2eeffa404558e&oe=601B2F29"
+		logo: "https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/e35/111006793_160682592202621_3265230477113647656_n.jpg?tp=1&_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=101&_nc_ohc=_PzzjpbLyuQAX94kkvs&edm=AABBvjUBAAAA&ccb=7-4&oh=3fdaa340ed1e2f923b95adc72d8d59be&oe=60C8C9E9&_nc_sid=83d603"
 	},
 	links:[
 		{
