@@ -11,8 +11,9 @@ const STORE = {
 			color: "default"
 		},
 		{
-			name: "ИНТРА",
-			link: "https://profile.intra.42.fr/",
+			name: "localhost",
+			subtitle: '3000',
+			link: "http://localhost:3000",
 			color: "default"
 		},
 		{
