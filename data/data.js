@@ -11,7 +11,7 @@ const STORE = {
 			color: "default"
 		},
 		{
-			name: "localhost",
+			name: "LOCALHOST",
 			subtitle: '3000',
 			link: "http://localhost:3000",
 			color: "default"
